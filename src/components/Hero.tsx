@@ -12,11 +12,7 @@ export default function Hero() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           <div className="flex-1 max-w-2xl">
             <div className="flex items-center mb-4">
-              <img 
-                src="/lovable-uploads/24bfd42d-216e-4e22-8c0b-80e200bff779.png" 
-                alt="TickyFy Logo" 
-                className="h-10 mr-3"
-              />
+              <span className="text-2xl font-bold">TickyFy</span>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               Modern Digital Ticketing for 

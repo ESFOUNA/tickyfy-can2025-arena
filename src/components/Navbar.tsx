@@ -11,11 +11,6 @@ export default function Navbar() {
     <header className="fixed w-full z-50 bg-white/90 backdrop-blur-sm shadow-sm py-4 dark:bg-gray-900/90 dark:text-white">
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center space-x-4">
-          <img 
-            src="/lovable-uploads/24bfd42d-216e-4e22-8c0b-80e200bff779.png" 
-            alt="TickyFy Logo" 
-            className="h-8"
-          />
           <span className="text-xl font-bold text-tickyfy-black dark:text-white">
             Ticke<span className="text-tickyfy-green">Fy</span>
           </span>
