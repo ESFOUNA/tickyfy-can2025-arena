@@ -1,6 +1,6 @@
 
 import { Button } from "./ui/button";
-import { ArrowRight, Football } from "lucide-react";
+import { ArrowRight, Trophy } from "lucide-react";
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
 
