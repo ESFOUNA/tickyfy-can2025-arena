@@ -6,7 +6,7 @@ export default function Hero() {
   return (
     <section 
       id="home" 
-      className="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-r from-white to-blue-50 animate-fade-in"
+      className="pt-24 pb-16 md:pt-32 md:pb-24 bg-gradient-to-r from-white to-blue-50 animate-fade-in dark:from-gray-900 dark:to-gray-800 dark:text-white"
     >
       <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
@@ -17,18 +17,13 @@ export default function Hero() {
                 alt="TickyFy Logo" 
                 className="h-10 mr-3"
               />
-              <img 
-                src="/lovable-uploads/b8f810cd-78b9-4da1-bcc8-aa3d9034abbe.png" 
-                alt="CAN 2025 Logo" 
-                className="h-10"
-              />
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               Modern Digital Ticketing for 
               <span className="text-morocco-red"> CAN </span>
               <span className="text-morocco-green">2025</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-700 mb-8">
+            <p className="text-lg md:text-xl text-gray-700 mb-8 dark:text-gray-300">
               TickyFy revolutionizes stadium access with secure, digital tickets and facial recognition technology for 
               the Africa Cup of Nations in Morocco.
             </p>
@@ -43,7 +38,7 @@ export default function Hero() {
               <Button 
                 variant="outline" 
                 size="lg" 
-                className="border-tickyfy-blue text-tickyfy-blue hover:bg-tickyfy-blue/10"
+                className="border-tickyfy-blue text-tickyfy-blue hover:bg-tickyfy-blue/10 dark:border-tickyfy-blue/70 dark:text-tickyfy-blue/90"
                 asChild
               >
                 <a href="#features">See Features</a>
@@ -51,7 +46,7 @@ export default function Hero() {
             </div>
           </div>
           <div className="flex-1 relative">
-            <div className="bg-white p-6 rounded-xl shadow-xl">
+            <div className="bg-white p-6 rounded-xl shadow-xl dark:bg-gray-800">
               <img 
                 src="https://images.unsplash.com/photo-1561616177-86df5330cad1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
                 alt="Stadium with Digital Ticket Access" 
