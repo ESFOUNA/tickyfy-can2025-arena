@@ -61,7 +61,21 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// TickyFy and CAN 2025 colors
+				tickyfy: {
+					green: '#4CAF50',
+					blue: '#0FA0CE',
+					black: '#000000',
+				},
+				morocco: {
+					red: '#EA384C',
+					green: '#006233',
+					gold: '#F1C40F',
 				}
+			},
+			fontFamily: {
+				sans: ['Poppins', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

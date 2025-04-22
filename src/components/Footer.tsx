@@ -1,0 +1,95 @@
+
+import { Linkedin, Mail, Phone } from "lucide-react";
+
+export default function Footer() {
+  return (
+    <footer id="contact" className="bg-gray-900 text-white py-12">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="space-y-4">
+            <div className="flex items-center space-x-3">
+              <img 
+                src="/lovable-uploads/24bfd42d-216e-4e22-8c0b-80e200bff779.png" 
+                alt="TickyFy Logo" 
+                className="h-8 brightness-0 invert"
+              />
+              <span className="text-xl font-bold">
+                Ticke<span className="text-tickyfy-green">Fy</span>
+              </span>
+            </div>
+            <p className="text-gray-400">
+              Modern digital ticketing solution for the Africa Cup of Nations 2025 in Morocco.
+            </p>
+            <div className="flex space-x-4">
+              <a 
+                href="https://linkedin.com" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <Linkedin className="h-5 w-5" />
+              </a>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-bold mb-4">Quick Links</h3>
+            <ul className="space-y-2">
+              <li>
+                <a href="#home" className="text-gray-400 hover:text-white transition-colors">Home</a>
+              </li>
+              <li>
+                <a href="#about" className="text-gray-400 hover:text-white transition-colors">About</a>
+              </li>
+              <li>
+                <a href="#features" className="text-gray-400 hover:text-white transition-colors">Features</a>
+              </li>
+              <li>
+                <a href="#team" className="text-gray-400 hover:text-white transition-colors">Team</a>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-bold mb-4">Features</h3>
+            <ul className="space-y-2">
+              <li className="text-gray-400">Digital Tickets</li>
+              <li className="text-gray-400">QR Code Validation</li>
+              <li className="text-gray-400">Facial Recognition</li>
+              <li className="text-gray-400">Secure Authentication</li>
+              <li className="text-gray-400">Mobile Integration</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-lg font-bold mb-4">Contact</h3>
+            <ul className="space-y-3">
+              <li className="flex items-start">
+                <Mail className="h-5 w-5 mr-2 text-tickyfy-green" />
+                <span className="text-gray-400">contact@tickyfy.com</span>
+              </li>
+              <li className="flex items-start">
+                <Phone className="h-5 w-5 mr-2 text-tickyfy-green" />
+                <span className="text-gray-400">+212 522 123 456</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="border-t border-gray-800 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-gray-400 mb-4 md:mb-0">
+            &copy; {new Date().getFullYear()} TickyFy. All rights reserved.
+          </p>
+          <div className="flex space-x-8">
+            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+              Privacy Policy
+            </a>
+            <a href="#" className="text-gray-400 hover:text-white text-sm transition-colors">
+              Terms of Service
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
