@@ -14,19 +14,19 @@ const teamMembers: TeamMember[] = [
   {
     name: "Yasmine Znatni",
     role: "UI/UX Designer",
-    image: "/lovable-uploads/7e302de2-4921-4b19-b749-7461a8d04af5.png",
+    image: "/lovable-uploads/aed45a46-f67b-4fa2-aa60-96b9f5ac3695.png",
     linkedin: "https://www.linkedin.com/in/yasmine-znatni/",
   },
   {
     name: "Saad Boukili",
     role: "Frontend Developer",
-    image: "/lovable-uploads/aa614a98-44ad-47a4-ac41-c678e52b7f0c.png",
+    image: "/lovable-uploads/a73742b7-9e37-42ab-baea-d86113b44e67.png",
     linkedin: "https://www.linkedin.com/in/saad-boukili-a68303224/",
   },
   {
     name: "Abdelali Chergaoui",
     role: "Backend Developer",
-    image: "/lovable-uploads/e220d8c5-a68a-44e4-a563-d5d9ffa0db0c.png",
+    image: "/lovable-uploads/fbcdb70b-fb39-4aae-ba1f-f20b2a288d4c.png",
     linkedin: "https://www.linkedin.com/in/abdelali-chergaoui-b62b61225/",
   },
 ];
@@ -54,7 +54,7 @@ export default function Team() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Meet Our Team</h2>
           <div className="w-24 h-1 bg-tickyfy-blue mx-auto mb-6"></div>
           <p className="max-w-3xl mx-auto text-lg text-gray-600 dark:text-gray-300">
-            The talented individuals behind the TickyFy project, working together to revolutionize
+            The talented individuals behind the TickeFy project, working together to revolutionize
             the ticketing experience for CAN 2025 in Morocco.
           </p>
         </div>

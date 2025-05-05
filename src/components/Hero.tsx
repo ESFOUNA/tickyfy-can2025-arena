@@ -147,7 +147,7 @@ export default function Hero() {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
           <div className="flex-1 max-w-2xl">
             <div className="flex items-center mb-4">
-              {/* TickyFy text removed per request */}
+              {/* TickeFy text removed per request */}
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
               Modern Digital Ticketing for 
@@ -155,7 +155,7 @@ export default function Hero() {
               <span className="text-morocco-green">2025</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-700 mb-8 dark:text-gray-300">
-              TickyFy revolutionizes stadium access with secure, digital tickets and facial recognition technology for 
+              TickeFy revolutionizes stadium access with secure, digital tickets and facial recognition technology for 
               the Africa Cup of Nations in Morocco.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
