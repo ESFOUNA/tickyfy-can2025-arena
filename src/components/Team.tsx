@@ -14,8 +14,8 @@ type TeamMember = {
 const teamMembers: TeamMember[] = [
   {
     name: "Mohammed Amine Esfouna",
-    role: "Project Manager",
-    image: "/lovable-uploads/da56b30e-fdec-4bbb-87a8-6af3e473118c.png",
+    role: "Front End Dev",
+    image: "/lovable-uploads/57f536b3-f792-4e1c-ba2a-9b199a6bf907.png",
     linkedin: "https://www.linkedin.com/in/mohammed-amine-esfouna/",
   },
   {
@@ -36,6 +36,12 @@ const teamMembers: TeamMember[] = [
     image: "/lovable-uploads/fbcdb70b-fb39-4aae-ba1f-f20b2a288d4c.png",
     linkedin: "https://www.linkedin.com/in/abdelali-chergaoui-b62b61225/",
   },
+  {
+    name: "Mohammed Lahkim",
+    role: "DevOps Engineer",
+    image: "/lovable-uploads/da56b30e-fdec-4bbb-87a8-6af3e473118c.png",
+    linkedin: "https://www.linkedin.com/in/mohammed-lahkim/",
+  }
 ];
 
 const container = {
@@ -67,7 +73,7 @@ export default function Team() {
         </div>
 
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8"
           variants={container}
           initial="hidden"
           whileInView="show"
