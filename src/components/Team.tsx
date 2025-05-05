@@ -2,6 +2,7 @@
 import { Linkedin, ExternalLink } from "lucide-react";
 import { Button } from "./ui/button";
 import { motion } from "framer-motion";
+import { Avatar, AvatarImage, AvatarFallback } from "./ui/avatar";
 
 type TeamMember = {
   name: string;
@@ -12,9 +13,15 @@ type TeamMember = {
 
 const teamMembers: TeamMember[] = [
   {
+    name: "Mohammed Amine Esfouna",
+    role: "Project Manager",
+    image: "/lovable-uploads/da56b30e-fdec-4bbb-87a8-6af3e473118c.png",
+    linkedin: "https://www.linkedin.com/in/mohammed-amine-esfouna/",
+  },
+  {
     name: "Yasmine Znatni",
     role: "UI/UX Designer",
-    image: "/lovable-uploads/aed45a46-f67b-4fa2-aa60-96b9f5ac3695.png",
+    image: "/lovable-uploads/755cfdbe-76f4-4afe-9bfe-54d61bea5841.png",
     linkedin: "https://www.linkedin.com/in/yasmine-znatni/",
   },
   {
@@ -60,7 +67,7 @@ export default function Team() {
         </div>
 
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
           variants={container}
           initial="hidden"
           whileInView="show"
@@ -73,12 +80,13 @@ export default function Team() {
               variants={item}
               whileHover={{ y: -10, transition: { duration: 0.3 } }}
             >
-              <div className="h-64 overflow-hidden">
+              <div className="relative h-72 overflow-hidden group">
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover transition-transform hover:scale-105 duration-500"
+                  className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-1">{member.name}</h3>
