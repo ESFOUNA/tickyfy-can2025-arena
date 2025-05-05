@@ -13,10 +13,10 @@ type TeamMember = {
 
 const teamMembers: TeamMember[] = [
   {
-    name: "Mohammed Amine Esfouna",
+    name: "Saad Boukil",
     role: "Front End Dev",
     image: "/lovable-uploads/57f536b3-f792-4e1c-ba2a-9b199a6bf907.png",
-    linkedin: "https://www.linkedin.com/in/mohammed-amine-esfouna/",
+    linkedin: "https://www.linkedin.com/in/saad-boukili-a68303224/",
   },
   {
     name: "Yasmine Znatni",
@@ -25,22 +25,22 @@ const teamMembers: TeamMember[] = [
     linkedin: "https://www.linkedin.com/in/yasmine-znatni/",
   },
   {
-    name: "Saad Boukili",
+    name: "Abdelali Chergaoui",
     role: "Frontend Developer",
     image: "/lovable-uploads/a73742b7-9e37-42ab-baea-d86113b44e67.png",
-    linkedin: "https://www.linkedin.com/in/saad-boukili-a68303224/",
-  },
-  {
-    name: "Abdelali Chergaoui",
-    role: "Backend Developer",
-    image: "/lovable-uploads/fbcdb70b-fb39-4aae-ba1f-f20b2a288d4c.png",
     linkedin: "https://www.linkedin.com/in/abdelali-chergaoui-b62b61225/",
   },
   {
     name: "Mohammed Lahkim",
+    role: "Backend Developer",
+    image: "/lovable-uploads/fbcdb70b-fb39-4aae-ba1f-f20b2a288d4c.png",
+    linkedin: "https://www.linkedin.com/in/mohammed-lahkim/",
+  },
+  {
+    name: "Mohammed Amine Esfouna",
     role: "DevOps Engineer",
     image: "/lovable-uploads/da56b30e-fdec-4bbb-87a8-6af3e473118c.png",
-    linkedin: "https://www.linkedin.com/in/mohammed-lahkim/",
+    linkedin: "https://www.linkedin.com/in/mohammed-amine-esfouna/",
   }
 ];
 
