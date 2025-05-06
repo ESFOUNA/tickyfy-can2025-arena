@@ -1,9 +1,9 @@
-
 import { Linkedin, ExternalLink } from "lucide-react";
 import { Button } from "./ui/button";
 import { motion } from "framer-motion";
 import { Avatar, AvatarImage, AvatarFallback } from "./ui/avatar";
 import { useEffect, useRef, useState } from "react";
+import { useIsMobile } from "react-hook-use-is-mobile";
 
 type TeamMember = {
   id: string;
@@ -86,6 +86,7 @@ export default function Team() {
   const [lines, setLines] = useState<{ id: string, x1: number, y1: number, x2: number, y2: number }[]>([]);
   const teamRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<Map<string, HTMLDivElement>>(new Map());
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const calculateLines = () => {
@@ -93,6 +94,12 @@ export default function Team() {
       
       const leaderCard = cardsRef.current.get("yasmine");
       if (!leaderCard) return;
+      
+      // Skip line calculation on very small screens
+      if (window.innerWidth < 640) {
+        setLines([]);
+        return;
+      }
       
       const leaderRect = leaderCard.getBoundingClientRect();
       const teamRect = teamRef.current.getBoundingClientRect();
@@ -138,46 +145,48 @@ export default function Team() {
   }, []);
 
   return (
-    <section id="team" className="py-16 md:py-24 bg-white dark:bg-gray-900 dark:text-white overflow-x-hidden">
+    <section id="team" className="py-12 md:py-24 bg-white dark:bg-gray-900 dark:text-white overflow-x-hidden">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Meet Our Team</h2>
-          <div className="w-24 h-1 bg-tickyfy-blue mx-auto mb-6"></div>
-          <p className="max-w-3xl mx-auto text-lg text-gray-600 dark:text-gray-300">
+        <div className="text-center mb-10 md:mb-16">
+          <h2 className="text-2xl md:text-4xl font-bold mb-3 md:mb-4">Meet Our Team</h2>
+          <div className="w-16 md:w-24 h-1 bg-tickyfy-blue mx-auto mb-4 md:mb-6"></div>
+          <p className="max-w-3xl mx-auto text-base md:text-lg text-gray-600 dark:text-gray-300 px-2">
             The talented individuals behind the TickeFy project, working together to revolutionize
             the ticketing experience for CAN 2025 in Morocco.
           </p>
         </div>
 
         <div className="relative" ref={teamRef}>
-          {/* SVG for connecting lines */}
-          <svg className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
-            {lines.map((line) => (
-              <motion.path
-                key={line.id}
-                d={`M${line.x1},${line.y1} C${line.x1},${line.y1 + 50} ${line.x2},${line.y2 - 50} ${line.x2},${line.y2}`}
-                stroke="url(#lineGradient)"
-                strokeWidth="2"
-                fill="none"
-                variants={connectingLineAnimation}
-                initial="hidden"
-                animate="visible"
-                strokeLinecap="round"
-                strokeDasharray="5,5"
-                className="dark:opacity-70"
-              />
-            ))}
-            {/* Gradient definition for lines */}
-            <defs>
-              <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#0FA0CE" />
-                <stop offset="100%" stopColor="#4CAF50" />
-              </linearGradient>
-            </defs>
-          </svg>
+          {/* SVG for connecting lines - only show on non-mobile */}
+          {!isMobile && (
+            <svg className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
+              {lines.map((line) => (
+                <motion.path
+                  key={line.id}
+                  d={`M${line.x1},${line.y1} C${line.x1},${line.y1 + 50} ${line.x2},${line.y2 - 50} ${line.x2},${line.y2}`}
+                  stroke="url(#lineGradient)"
+                  strokeWidth="2"
+                  fill="none"
+                  variants={connectingLineAnimation}
+                  initial="hidden"
+                  animate="visible"
+                  strokeLinecap="round"
+                  strokeDasharray="5,5"
+                  className="dark:opacity-70"
+                />
+              ))}
+              {/* Gradient definition for lines */}
+              <defs>
+                <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#0FA0CE" />
+                  <stop offset="100%" stopColor="#4CAF50" />
+                </linearGradient>
+              </defs>
+            </svg>
+          )}
           
           {/* Team hierarchy grid */}
-          <div className="grid grid-cols-1 gap-20">
+          <div className="grid grid-cols-1 gap-12 md:gap-20">
             {/* Leader (top position) */}
             <div className="flex justify-center">
               {teamMembers
@@ -232,7 +241,7 @@ function TeamMemberCard({ member, isLeader }: { member: TeamMember, isLeader: bo
         transition: { duration: 0.3 } 
       }}
     >
-      <div className="relative h-72 overflow-hidden group">
+      <div className="relative h-56 sm:h-64 md:h-72 overflow-hidden group">
         <img
           src={member.image}
           alt={member.name}
@@ -251,24 +260,25 @@ function TeamMemberCard({ member, isLeader }: { member: TeamMember, isLeader: bo
           </motion.div>
         )}
       </div>
-      <div className="p-6">
-        <h3 className="text-xl font-bold mb-1">{member.name}</h3>
-        <p className="text-gray-600 mb-4 dark:text-gray-400">{member.role}</p>
+      <div className="p-4 sm:p-5 md:p-6">
+        <h3 className="text-lg md:text-xl font-bold mb-1">{member.name}</h3>
+        <p className="text-sm md:text-base text-gray-600 mb-3 md:mb-4 dark:text-gray-400">{member.role}</p>
         <div className="flex items-center justify-between">
           <Button 
             variant="outline" 
             size="sm"
-            className="border-tickyfy-blue text-tickyfy-blue hover:bg-tickyfy-blue/10 dark:border-tickyfy-blue/70 dark:text-tickyfy-blue/90"
+            className="border-tickyfy-blue text-tickyfy-blue hover:bg-tickyfy-blue/10 dark:border-tickyfy-blue/70 dark:text-tickyfy-blue/90 min-h-9 touch-target"
             asChild
           >
             <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center">
               <Linkedin className="mr-2 h-4 w-4" />
-              LinkedIn
+              <span className="text-xs md:text-sm">LinkedIn</span>
             </a>
           </Button>
           <Button 
             variant="ghost" 
             size="sm"
+            className="min-h-9 touch-target"
             asChild
           >
             <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center text-gray-500 hover:text-tickyfy-green dark:text-gray-400">
