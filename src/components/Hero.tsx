@@ -1,3 +1,4 @@
+
 import { Button } from "./ui/button";
 import { ArrowRight, Trophy } from "lucide-react";
 import { useEffect, useRef } from "react";
@@ -208,8 +209,8 @@ export default function Hero() {
           </div>
         </div>
       </div>
-      {/* Add CSS for logo fade-in animation */}
-      <style jsx>{`
+      {/* Fix the style element by removing the jsx property */}
+      <style>{`
         @keyframes logoFadeIn {
           from {
             opacity: 0;

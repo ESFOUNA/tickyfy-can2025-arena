@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 import { motion } from "framer-motion";
 import { Avatar, AvatarImage, AvatarFallback } from "./ui/avatar";
 import { useEffect, useRef, useState } from "react";
-import { useIsMobile } from "react-hook-use-is-mobile";
+import { useIsMobile } from "../hooks/use-mobile";
 
 type TeamMember = {
   id: string;
